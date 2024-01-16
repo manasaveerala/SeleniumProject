@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+
+  <test thread-count="5" name="Test">
+  <groups>
+	  <run>
+	   <include name="sanity"></include>
+	   <exclude name="regression"></exclude>
+	  </run>
+  </groups>
+    <classes>
+      <class name="tesNGPractice.Grouping"/>
+    </classes>
+  </test> <!-- Test -->
+ <!-- Suite -->
+
+
+<test name="IE">
+<parameter name="browser" value="IE"></parameter>
+<parameter name="url" value="https://opensource-demo.orangehrmlive.com/"></parameter>
+<classes>
+<class name="tesNGPractice.ParallelParam" ></class>
+</classes>
+</test>
+
+<test name="Chrometest">
+<parameter name="browser" value="chrome"></parameter>
+<parameter name="url" value="https://opensource-demo.orangehrmlive.com/"></parameter>
+<classes>
+<class name="tesNGPractice.ParallelParam"></class>
+</classes>
+</test>
+</suite>
